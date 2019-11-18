@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+	package
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:3:5-32
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:1-12:12
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:5:5-10:19
+service#com.sunny.network.MyService
+ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:6:9-9:48
+	android:enabled
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:8:13-36
+	android:exported
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:9:13-37
+	android:name
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml:7:13-38
+uses-sdk
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		ADDED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
+		INJECTED from /Users/bjhl/CustomeViewCollections/MyAndroid/network/src/main/AndroidManifest.xml
