@@ -28,6 +28,7 @@ object SkinManager {
         try {
             val assetManager = AssetManager::class.java.newInstance()
             val addAssetPath = assetManager::class.java.getDeclaredMethod("addAssetPath", String::class.java)
+            addAssetPath.isAccessible = true
             addAssetPath.invoke(assetManager, path)
             val appResource = application?.resources
             //实例化要加载的APK的Resource
