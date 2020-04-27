@@ -17,4 +17,11 @@
         </attr>
         <attr name="round_radius" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="Banner">
+        <attr name="mode" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="clip" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>

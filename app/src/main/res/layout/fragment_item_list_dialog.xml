@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/sheetBar"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/cardview_dark_background"
+        android:layout_width="52dp"
+        android:layout_height="5dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp10"
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/list_item_spacing_half"
+        android:paddingBottom="@dimen/list_item_spacing_half"
+        tools:context=".fragment.ItemListDialogFragment"
+        tools:listitem="@layout/fragment_item_list_dialog_item"/>
+</LinearLayout>
