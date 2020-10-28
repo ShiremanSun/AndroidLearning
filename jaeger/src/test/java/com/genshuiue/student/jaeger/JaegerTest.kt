@@ -14,9 +14,8 @@ class JaegerTest {
     fun jaegerTest() {
         JaegerUtil.getTracer()
         val totalSpan = GlobalTracer.get().buildSpan("student").start()
-
         totalSpan.log("start")
-        for (i in 0..1) {
+        for (i in 0..6) {
             val span = GlobalTracer.get().buildSpan("student").asChildOf(totalSpan).start()
             span.log("spanStart")
             Thread.sleep(1000)

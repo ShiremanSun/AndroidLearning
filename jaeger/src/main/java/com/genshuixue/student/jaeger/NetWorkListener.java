@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -14,8 +15,10 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.opentracing.Span;
+import io.opentracing.SpanContext;
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
+import io.opentracing.propagation.TextMapAdapter;
 import io.opentracing.util.GlobalTracer;
 import okhttp3.Call;
 import okhttp3.Connection;
@@ -52,6 +55,7 @@ public class NetWorkListener extends EventListener {
     private static final String RESPONSE_HEADERS = "responseHeaders";
     private static final String REQUEST_BODY = "requestBody";
 
+
     private static final String RESPONSE_BODY = "responseBody";
 
 
@@ -81,10 +85,8 @@ public class NetWorkListener extends EventListener {
     public void callStart(@NotNull Call call) {
         mTotalSpan = mTracer.buildSpan("total").start();
         mTotalSpan.log(call.request().url().toString());
-        mTracer.activateSpan(mTotalSpan);
         super.callStart(call);
-        mTracer.inject(mTotalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(call.request().newBuilder()));
-
+        mTracer.inject(mTotalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(call.request()));
         buildChildSpan(CALL);
     }
 

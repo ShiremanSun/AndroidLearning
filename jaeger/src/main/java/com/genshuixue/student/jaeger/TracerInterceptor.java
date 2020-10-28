@@ -25,7 +25,7 @@ public class TracerInterceptor implements Interceptor {
         Span totalSpan = mTracer.buildSpan(chain.request().url().toString()).start();
         totalSpan.setTag("test", "test");
         Request.Builder builder = chain.request().newBuilder();
-        mTracer.inject(totalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(builder));
+        mTracer.inject(totalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(chain.request()));
         try {
             response = chain.proceed(builder.build());
         } catch (Exception e) {

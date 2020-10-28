@@ -1023,8 +1023,7 @@ public final class Model {
      */
     private void setTimestamp(com.google.protobuf.Timestamp value) {
       value.getClass();
-  timestamp_ = value;
-
+      timestamp_ = value;
       }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>

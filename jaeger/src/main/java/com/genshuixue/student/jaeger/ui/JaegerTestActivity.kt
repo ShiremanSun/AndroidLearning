@@ -6,6 +6,7 @@ import android.util.Log
 import com.genshuiue.student.jaeger.R
 import com.genshuixue.student.jaeger.JaegerUtil
 import com.genshuixue.student.jaeger.NetWorkListener
+import io.opentracing.util.GlobalTracer
 import kotlinx.android.synthetic.main.activity_jaeger_test.*
 import okhttp3.*
 import java.io.IOException
@@ -17,14 +18,17 @@ class JaegerTestActivity : AppCompatActivity() {
 
         JaegerUtil.getTracer()
         test.setOnClickListener {
-            val url = "https://sapi.genshuixue.com//sapi/viewLogic/homepage/clazzCartCount?os=android27&l-mac=&channel=GenShuiXue&version=4.4.2.2&uuid=9205322882962650&platform=androidPBAM00&did=bjhl9205322882962650&oaid=&l-imei=9205322882962650&cid=2100012&timestamp=1603702179072&os=android27&l-mac=&channel=GenShuiXue&version=4.4.2.2&uuid=9205322882962650&platform=androidPBAM00&did=bjhl9205322882962650&oaid=&l-imei=9205322882962650&cid=2100012&timestamp=1603702179072"
+
+            val request = Request.Builder().url("http://172.20.116.62:8888")
             val client = OkHttpClient.Builder()
                     //.addInterceptor(TracerInterceptor(tracer))
                     .eventListenerFactory(NetWorkListener.get())
                     .build()
-            val request = Request.Builder().url(url).get().build();
-            client.newCall(request).enqueue(object : Callback{
+
+
+            client.newCall(request.build()).enqueue(object : Callback{
                 override fun onFailure(call: Call, e: IOException) {
+                    Log.d("jaeger", e.message)
                 }
 
                 override fun onResponse(call: Call, response: Response) {

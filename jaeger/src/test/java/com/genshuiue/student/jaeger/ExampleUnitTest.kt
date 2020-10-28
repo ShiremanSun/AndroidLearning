@@ -17,9 +17,8 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-
         JaegerUtil.getTracer()
-        val url = "https://sapi.genshuixue.com//sapi/viewLogic/homepage/clazzCartCount?os=android27&l-mac=&channel=GenShuiXue&version=4.4.2.2&uuid=9205322882962650&platform=androidPBAM00&did=bjhl9205322882962650&oaid=&l-imei=9205322882962650&cid=2100012&timestamp=1603702179072&os=android27&l-mac=&channel=GenShuiXue&version=4.4.2.2&uuid=9205322882962650&platform=androidPBAM00&did=bjhl9205322882962650&oaid=&l-imei=9205322882962650&cid=2100012&timestamp=1603702179072"
+        val url = "https://127.0.0.1:9999"
         val client = OkHttpClient.Builder()
                 //.addInterceptor(TracerInterceptor(tracer))
                 .eventListenerFactory(NetWorkListener.get())

@@ -35,7 +35,6 @@ public class GrpcSender extends ThriftSender {
 
     @Override
     public void send(Process process, List<Span> spans) throws SenderException {
-        //Model.Batch batch = new Model.Batch()
         Collector.PostSpansRequest request = Collector.PostSpansRequest.newBuilder().setBatch(ConvertUtil.convertBatch(spans, process)).build();
         CollectorClient.getInstance(mChannelBuilder).report(request);
     }
