@@ -1,1 +1,3 @@
+include ':compose'
 include ':app', ':onkeyskin', ':livedatabus'
+include ':jaeger'

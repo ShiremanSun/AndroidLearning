@@ -2,6 +2,7 @@ package com.sunny.student.webview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sunny.student.R
 
 class WebViewFragment : AppCompatActivity() {
 

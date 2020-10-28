@@ -1,4 +1,4 @@
-package com.hk.sdk.common.ui.view;
+package com.sunny.student.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,12 +8,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.util.AttributeSet;
 
-import com.hk.sdk.common.R;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.sunny.student.R;
+
 
 /**
  * 带阴影的ConstraintLayout
@@ -106,12 +106,12 @@ public class ConstraintShadowLayout extends ConstraintLayout {
         }
 
         try {
-            mCornerRadius = attr.getDimension(R.styleable.ConstraintShadowLayout_cornerRadiusC, getResources().getDimension(R.dimen.common_default_corner_radius_4));
-            mShadowRadius = attr.getDimension(R.styleable.ConstraintShadowLayout_shadowRadiusC, getResources().getDimension(R.dimen.common_default_shadow_radius_4));
+            mCornerRadius = attr.getDimension(R.styleable.ConstraintShadowLayout_cornerRadiusC, 4);
+            mShadowRadius = attr.getDimension(R.styleable.ConstraintShadowLayout_shadowRadiusC, 4);
             mDx = attr.getDimension(R.styleable.ConstraintShadowLayout_dxC, 0);
             mDy = attr.getDimension(R.styleable.ConstraintShadowLayout_dyC, 0);
             asideValid = attr.getBoolean(R.styleable.ConstraintShadowLayout_asideValidC, false);
-            mShadowColor = attr.getColor(R.styleable.ConstraintShadowLayout_shadowColorC, getResources().getColor(R.color.common_default_shadow_color_88757575));
+            mShadowColor = attr.getColor(R.styleable.ConstraintShadowLayout_shadowColorC, Color.TRANSPARENT);
             mFillColor = attr.getColor(R.styleable.ConstraintShadowLayout_fillColorC, Color.WHITE);
         } finally {
             attr.recycle();

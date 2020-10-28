@@ -3,6 +3,7 @@
 
 package com.genshuixue.student.jaeger;
 
+
 public final class Collector {
   private Collector() {}
   public static void registerAllExtensions(
@@ -21,7 +22,7 @@ public final class Collector {
      * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
      * @return The batch.
      */
-    com.genshuixue.student.jaeger.Model.Batch getBatch();
+    Model.Batch getBatch();
   }
   /**
    * Protobuf type {@code jaeger.api_v2.PostSpansRequest}
@@ -34,118 +35,103 @@ public final class Collector {
     private PostSpansRequest() {
     }
     public static final int BATCH_FIELD_NUMBER = 1;
-    private com.genshuixue.student.jaeger.Model.Batch batch_;
+    private Model.Batch batch_;
     /**
      * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
      */
-    @java.lang.Override
+    @Override
     public boolean hasBatch() {
       return batch_ != null;
     }
     /**
      * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
      */
-    @java.lang.Override
-    public com.genshuixue.student.jaeger.Model.Batch getBatch() {
-      return batch_ == null ? com.genshuixue.student.jaeger.Model.Batch.getDefaultInstance() : batch_;
+    @Override
+    public Model.Batch getBatch() {
+      return batch_ == null ? Model.Batch.getDefaultInstance() : batch_;
     }
     /**
      * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
      */
-    private void setBatch(com.genshuixue.student.jaeger.Model.Batch value) {
+    private void setBatch(Model.Batch value) {
       value.getClass();
-  batch_ = value;
-      
+      batch_ = value;
       }
-    /**
-     * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.SuppressWarnings({"ReferenceEquality"})
-    private void mergeBatch(com.genshuixue.student.jaeger.Model.Batch value) {
-      value.getClass();
-  if (batch_ != null &&
-          batch_ != com.genshuixue.student.jaeger.Model.Batch.getDefaultInstance()) {
-        batch_ =
-          com.genshuixue.student.jaeger.Model.Batch.newBuilder(batch_).mergeFrom(value).buildPartial();
-      } else {
-        batch_ = value;
-      }
-      
-    }
+
     /**
      * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
      */
     private void clearBatch() {  batch_ = null;
-      
+
     }
 
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(byte[] data)
+    public static Collector.PostSpansRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(java.io.InputStream input)
+    public static Collector.PostSpansRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseDelimitedFrom(java.io.InputStream input)
+    public static Collector.PostSpansRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseDelimitedFrom(
+    public static Collector.PostSpansRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest parseFrom(
+    public static Collector.PostSpansRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -156,8 +142,8 @@ public final class Collector {
     public static Builder newBuilder() {
       return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
-    public static Builder newBuilder(com.genshuixue.student.jaeger.Collector.PostSpansRequest prototype) {
-      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
+    public static Builder newBuilder(Collector.PostSpansRequest prototype) {
+      return DEFAULT_INSTANCE.createBuilder(prototype);
     }
 
     /**
@@ -165,9 +151,9 @@ public final class Collector {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.genshuixue.student.jaeger.Collector.PostSpansRequest, Builder> implements
+          Collector.PostSpansRequest, Builder> implements
         // @@protoc_insertion_point(builder_implements:jaeger.api_v2.PostSpansRequest)
-        com.genshuixue.student.jaeger.Collector.PostSpansRequestOrBuilder {
+        Collector.PostSpansRequestOrBuilder {
       // Construct using com.genshuixue.student.jaeger.Collector.PostSpansRequest.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -177,42 +163,27 @@ public final class Collector {
       /**
        * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
        */
-      @java.lang.Override
+      @Override
       public boolean hasBatch() {
         return instance.hasBatch();
       }
       /**
        * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
        */
-      @java.lang.Override
-      public com.genshuixue.student.jaeger.Model.Batch getBatch() {
+      @Override
+      public Model.Batch getBatch() {
         return instance.getBatch();
       }
       /**
        * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setBatch(com.genshuixue.student.jaeger.Model.Batch value) {
+      public Builder setBatch(Model.Batch value) {
         copyOnWrite();
         instance.setBatch(value);
         return this;
         }
-      /**
-       * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder setBatch(
-          com.genshuixue.student.jaeger.Model.Batch.Builder builderForValue) {
-        copyOnWrite();
-        instance.setBatch(builderForValue.build());
-        return this;
-      }
-      /**
-       * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder mergeBatch(com.genshuixue.student.jaeger.Model.Batch value) {
-        copyOnWrite();
-        instance.mergeBatch(value);
-        return this;
-      }
+
+
       /**
        * <code>.jaeger.api_v2.Batch batch = 1 [(.gogoproto.nullable) = false];</code>
        */
@@ -223,23 +194,23 @@ public final class Collector {
 
       // @@protoc_insertion_point(builder_scope:jaeger.api_v2.PostSpansRequest)
     }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new com.genshuixue.student.jaeger.Collector.PostSpansRequest();
+          return new Collector.PostSpansRequest();
         }
         case NEW_BUILDER: {
           return new Builder();
         }
         case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
+            Object[] objects = new Object[] {
               "batch_",
             };
-            java.lang.String info =
+            String info =
                 "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0000\u0000\u0001\t";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
@@ -248,13 +219,13 @@ public final class Collector {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          com.google.protobuf.Parser<com.genshuixue.student.jaeger.Collector.PostSpansRequest> parser = PARSER;
+          com.google.protobuf.Parser<Collector.PostSpansRequest> parser = PARSER;
           if (parser == null) {
-            synchronized (com.genshuixue.student.jaeger.Collector.PostSpansRequest.class) {
+            synchronized (Collector.PostSpansRequest.class) {
               parser = PARSER;
               if (parser == null) {
                 parser =
-                    new DefaultInstanceBasedParser<com.genshuixue.student.jaeger.Collector.PostSpansRequest>(
+                    new DefaultInstanceBasedParser<Collector.PostSpansRequest>(
                         DEFAULT_INSTANCE);
                 PARSER = parser;
               }
@@ -274,7 +245,7 @@ public final class Collector {
 
 
     // @@protoc_insertion_point(class_scope:jaeger.api_v2.PostSpansRequest)
-    private static final com.genshuixue.student.jaeger.Collector.PostSpansRequest DEFAULT_INSTANCE;
+    private static final Collector.PostSpansRequest DEFAULT_INSTANCE;
     static {
       PostSpansRequest defaultInstance = new PostSpansRequest();
       // New instances are implicitly immutable so no need to make
@@ -284,7 +255,7 @@ public final class Collector {
         PostSpansRequest.class, defaultInstance);
     }
 
-    public static com.genshuixue.student.jaeger.Collector.PostSpansRequest getDefaultInstance() {
+    public static Collector.PostSpansRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -309,73 +280,73 @@ public final class Collector {
       PostSpansResponseOrBuilder {
     private PostSpansResponse() {
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(byte[] data)
+    public static Collector.PostSpansResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(java.io.InputStream input)
+    public static Collector.PostSpansResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseDelimitedFrom(java.io.InputStream input)
+    public static Collector.PostSpansResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseDelimitedFrom(
+    public static Collector.PostSpansResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse parseFrom(
+    public static Collector.PostSpansResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -386,7 +357,7 @@ public final class Collector {
     public static Builder newBuilder() {
       return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
-    public static Builder newBuilder(com.genshuixue.student.jaeger.Collector.PostSpansResponse prototype) {
+    public static Builder newBuilder(Collector.PostSpansResponse prototype) {
       return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
     }
 
@@ -395,9 +366,9 @@ public final class Collector {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.genshuixue.student.jaeger.Collector.PostSpansResponse, Builder> implements
+          Collector.PostSpansResponse, Builder> implements
         // @@protoc_insertion_point(builder_implements:jaeger.api_v2.PostSpansResponse)
-        com.genshuixue.student.jaeger.Collector.PostSpansResponseOrBuilder {
+        Collector.PostSpansResponseOrBuilder {
       // Construct using com.genshuixue.student.jaeger.Collector.PostSpansResponse.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -406,20 +377,21 @@ public final class Collector {
 
       // @@protoc_insertion_point(builder_scope:jaeger.api_v2.PostSpansResponse)
     }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    @Override
+    @SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new com.genshuixue.student.jaeger.Collector.PostSpansResponse();
+          return new Collector.PostSpansResponse();
         }
         case NEW_BUILDER: {
           return new Builder();
         }
         case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = null;java.lang.String info =
+            Object[] objects = null;
+            String info =
                 "\u0000\u0000";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
@@ -428,13 +400,13 @@ public final class Collector {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          com.google.protobuf.Parser<com.genshuixue.student.jaeger.Collector.PostSpansResponse> parser = PARSER;
+          com.google.protobuf.Parser<Collector.PostSpansResponse> parser = PARSER;
           if (parser == null) {
-            synchronized (com.genshuixue.student.jaeger.Collector.PostSpansResponse.class) {
+            synchronized (Collector.PostSpansResponse.class) {
               parser = PARSER;
               if (parser == null) {
                 parser =
-                    new DefaultInstanceBasedParser<com.genshuixue.student.jaeger.Collector.PostSpansResponse>(
+                    new DefaultInstanceBasedParser<Collector.PostSpansResponse>(
                         DEFAULT_INSTANCE);
                 PARSER = parser;
               }
@@ -454,7 +426,7 @@ public final class Collector {
 
 
     // @@protoc_insertion_point(class_scope:jaeger.api_v2.PostSpansResponse)
-    private static final com.genshuixue.student.jaeger.Collector.PostSpansResponse DEFAULT_INSTANCE;
+    private static final Collector.PostSpansResponse DEFAULT_INSTANCE;
     static {
       PostSpansResponse defaultInstance = new PostSpansResponse();
       // New instances are implicitly immutable so no need to make
@@ -464,7 +436,7 @@ public final class Collector {
         PostSpansResponse.class, defaultInstance);
     }
 
-    public static com.genshuixue.student.jaeger.Collector.PostSpansResponse getDefaultInstance() {
+    public static Collector.PostSpansResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 

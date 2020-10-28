@@ -1,18 +1,10 @@
 package com.genshuixue.student.jaeger;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -20,7 +12,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.32.1)",
     comments = "Source: collector.proto")
-public final class CollectorServiceGrpc {
+final class CollectorServiceGrpc {
 
   private CollectorServiceGrpc() {}
 
@@ -63,7 +55,7 @@ public final class CollectorServiceGrpc {
   public static CollectorServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CollectorServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<CollectorServiceStub>() {
-        @java.lang.Override
+        @Override
         public CollectorServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new CollectorServiceStub(channel, callOptions);
         }
@@ -78,7 +70,7 @@ public final class CollectorServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CollectorServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<CollectorServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public CollectorServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new CollectorServiceBlockingStub(channel, callOptions);
         }
@@ -93,7 +85,7 @@ public final class CollectorServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CollectorServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<CollectorServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public CollectorServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new CollectorServiceFutureStub(channel, callOptions);
         }
@@ -112,7 +104,7 @@ public final class CollectorServiceGrpc {
       asyncUnimplementedUnaryCall(getPostSpansMethod(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getPostSpansMethod(),
@@ -133,7 +125,7 @@ public final class CollectorServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected CollectorServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectorServiceStub(channel, callOptions);
@@ -156,7 +148,7 @@ public final class CollectorServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected CollectorServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectorServiceBlockingStub(channel, callOptions);
@@ -178,7 +170,7 @@ public final class CollectorServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected CollectorServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectorServiceFutureStub(channel, callOptions);
@@ -208,8 +200,8 @@ public final class CollectorServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_POST_SPANS:
@@ -221,8 +213,8 @@ public final class CollectorServiceGrpc {
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {

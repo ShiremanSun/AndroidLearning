@@ -6,6 +6,8 @@ import android.os.Bundle
 
 class MyApplication : Application(), Application.ActivityLifecycleCallbacks {
 
+
+
     private val activities = HashSet<Activity>()
     override fun onCreate() {
         super.onCreate()

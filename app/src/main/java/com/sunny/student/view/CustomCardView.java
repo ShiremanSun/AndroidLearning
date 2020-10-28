@@ -3,6 +3,7 @@ package com.sunny.student.view;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
@@ -16,8 +17,6 @@ import com.sunny.student.R;
  */
 public class CustomCardView extends ConstraintLayout {
 
-    private int mCardCornerRadius;
-    private
     public CustomCardView(Context context) {
         this(context, null);
     }
@@ -33,14 +32,18 @@ public class CustomCardView extends ConstraintLayout {
 
     private void init(Context context, AttributeSet attributeSet) {
         TypedArray typedValue = context.obtainStyledAttributes(attributeSet, R.styleable.CustomCardView);
-        mCardCornerRadius = typedValue.getDimensionPixelSize(R.styleable.CustomCardView_cardCornerRadius, 0);
-
-        setBackground(createBackground(getContext(),0, getResources().getColor(R.color.ff6c00)
-                , 30 , 10));
+        int cardCornerRadius = typedValue.getDimensionPixelSize(R.styleable.CustomCardView_cardCornerRadius, 4);
+        int cardShadowColor = typedValue.getColor(R.styleable.CustomCardView_cardShadowColor, Color.TRANSPARENT);
+        int cardDy = typedValue.getDimensionPixelSize(R.styleable.CustomCardView_cardDy, 4);
+        int cardShadowSize = typedValue.getDimensionPixelSize(R.styleable.CustomCardView_cardShadowSize, 4);
+        ColorStateList backgroundColor = typedValue.getColorStateList(R.styleable.CustomCardView_cardBackgroundColor);
+        setBackground(createBackground(getContext(), backgroundColor, cardShadowColor
+                , cardCornerRadius , cardDy));
+        typedValue.recycle();
     }
 
-    private RoundRectDrawableWithShadow createBackground(Context context, int backgroundColor, int shadowColor, float radius, float elevation) {
-        return new RoundRectDrawableWithShadow(context.getResources(), ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)), radius, elevation,
+    private RoundRectDrawableWithShadow createBackground(Context context, ColorStateList backgroundColor, int shadowColor, float radius, float elevation) {
+        return new RoundRectDrawableWithShadow(context.getResources(), backgroundColor, shadowColor, radius, elevation,
                 elevation);
     }
 }

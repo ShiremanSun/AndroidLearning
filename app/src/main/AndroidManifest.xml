@@ -16,10 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SpanActivity"></activity>
+        <activity android:name=".maodian.MaoDianActivity"></activity>
+        <activity android:name=".activity.ThemeActivity" />
+        <activity android:name=".webview.WebViewFragment" />
+        <activity android:name=".SpanActivity" />
         <activity
             android:name=".EditTextTest"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".banner.test.BannerActivity" />
         <activity android:name=".test.TestActivity" />
         <activity android:name=".viewmodel.ViewModelActivity" />

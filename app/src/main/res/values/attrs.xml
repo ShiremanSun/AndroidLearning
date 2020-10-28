@@ -24,4 +24,23 @@
             <enum name="clip" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="ConstraintShadowLayout">
+        <attr name="cornerRadiusC" format="dimension" />
+        <attr name="shadowRadiusC" format="dimension" />
+        <attr name="shadowColorC" format="color" />
+        <attr name="fillColorC" format="color" />
+        <attr name="dxC" format="dimension" />
+        <attr name="dyC" format="dimension" />
+        <attr name="asideValidC" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="CustomCardView">
+        <attr name="cardCornerRadius" format="dimension"/>
+        <attr name="cardShadowColor" format="color"/>
+        <attr name="cardBackgroundColor" format="color"/>
+        <attr name="cardDy" format="dimension"/>
+        <attr name="cardShadowSize" format="dimension"/>
+    </declare-styleable>
 </resources>

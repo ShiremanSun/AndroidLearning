@@ -1,5 +1,6 @@
 package com.sunny.student
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -9,25 +10,38 @@ import android.provider.Settings
 import android.text.TextUtils
 import android.util.Log
 import android.view.Choreographer
+import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.FragmentActivity
+import com.genshuixue.student.jaeger.ui.JaegerTestActivity
 import com.sunny.student.activity.CircleClockActivity
 import com.sunny.student.activity.FragmentTestActivity
+import com.sunny.student.activity.ThemeActivity
 import com.sunny.student.banner.test.BannerActivity
 import com.sunny.student.fragment.ItemListDialogFragment
 import com.sunny.student.login.ILoginListener
 import com.sunny.student.login.WechatLogin
+import com.sunny.student.maodian.MaoDianActivity
 import com.sunny.student.navigation.NavigationRootActivity
 import com.sunny.student.test.TestActivity
 import com.sunny.student.util.CrashHandler
 import com.sunny.student.viewmodel.ViewModelActivity
+import com.sunny.student.webview.WebViewFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), MainActivityContact.View, ItemListDialogFragment.Listener{
+class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialogFragment.Listener{
     override fun onItemClicked(position: Int) {
     }
 
-
+    init {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +50,11 @@ class MainActivity : AppCompatActivity(), MainActivityContact.View, ItemListDial
         goAnimator.setOnClickListener {
             Log.d("openNo", isOpen2(this).toString())
             openN(this)
+        }
+
+        val webView = WebView(this)
+        webView.webViewClient = object : WebViewClient(){
+
         }
 
 
@@ -50,6 +69,11 @@ class MainActivity : AppCompatActivity(), MainActivityContact.View, ItemListDial
         }
         method.invoke(choreographer, 2,runnable,null)
 
+        zButton.setOnClickListener {
+            Toast.makeText(this, "hhh", Toast.LENGTH_SHORT).show()
+        }
+
+        button_container.isClickable = true
 
 
         fragmentTest.setOnClickListener {
@@ -112,8 +136,20 @@ class MainActivity : AppCompatActivity(), MainActivityContact.View, ItemListDial
         EditText.setOnClickListener {
             startActivity(Intent(this, EditTextTest::class.java))
         }
-        span.setOnClickListener {
-            startActivity(Intent(this, SpanActivity::class.java))
+        webview.setOnClickListener {
+            startActivity(Intent(this, WebViewFragment::class.java))
+        }
+
+        switchTheme.setOnClickListener {
+            startActivity(Intent(this, ThemeActivity::class.java))
+        }
+
+        maodian.setOnClickListener {
+            startActivity(Intent(this, MaoDianActivity::class.java))
+        }
+
+        jaeger.setOnClickListener {
+            startActivity(Intent(this, JaegerTestActivity::class.java))
         }
     }
 
