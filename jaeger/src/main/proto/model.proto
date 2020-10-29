@@ -26,7 +26,7 @@ import "duration.proto";
 // and rewrite it to model only in this repo. That should make it easier to generate
 // classes in other languages.
 option go_package = "model";
-option java_package = "com.genshuixue.student.jaeger";
+option java_package = "com.sunshuo.grpc.jaeger";
 
 // Enable gogoprotobuf extensions (https://github.com/gogo/protobuf/blob/master/extensions.md).
 // Enable custom Marshal method.

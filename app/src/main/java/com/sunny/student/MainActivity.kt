@@ -1,6 +1,5 @@
 package com.sunny.student
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -10,15 +9,12 @@ import android.provider.Settings
 import android.text.TextUtils
 import android.util.Log
 import android.view.Choreographer
-import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.FragmentActivity
-import com.genshuixue.student.jaeger.ui.JaegerTestActivity
+import com.sunshuo.grpc.jaeger.ui.JaegerTestActivity
 import com.sunny.student.activity.CircleClockActivity
 import com.sunny.student.activity.FragmentTestActivity
 import com.sunny.student.activity.ThemeActivity
