@@ -12,6 +12,9 @@ import okhttp3.*
 import java.io.IOException
 
 class JaegerTestActivity : AppCompatActivity() {
+    companion object{
+        var client : OkHttpClient? = null
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jaeger_test)
@@ -20,19 +23,19 @@ class JaegerTestActivity : AppCompatActivity() {
         test.setOnClickListener {
 
             val request = Request.Builder().url("http://172.20.116.62:8888")
-            val client = OkHttpClient.Builder()
-                    //.addInterceptor(TracerInterceptor(tracer))
-                    .eventListenerFactory(NetWorkListener.get())
-                    .build()
+            if (client == null) {
+                client = OkHttpClient.Builder()
+                        .eventListenerFactory(NetWorkListener.get())
+                        .build()
+            }
 
-
-            client.newCall(request.build()).enqueue(object : Callback{
+            client?.newCall(request.build())?.enqueue(object : Callback{
                 override fun onFailure(call: Call, e: IOException) {
                     Log.d("jaeger", e.message)
                 }
 
                 override fun onResponse(call: Call, response: Response) {
-                    Log.d("jaeger", response.body()?.string())
+                    Log.d("jaeger", response.body?.string())
                 }
 
             })

@@ -1,5 +1,9 @@
 package com.genshuixue.student.jaeger;
 
+import android.util.Log;
+
+import com.genshuixue.student.jaeger.ui.JaegerTestActivity;
+
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
@@ -16,6 +20,7 @@ public class RequestBuilderCarrier implements TextMap {
     static {
         try {
             headers = Request.class.getDeclaredField("headers");
+            headers.setAccessible(true);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
@@ -36,11 +41,14 @@ public class RequestBuilderCarrier implements TextMap {
      */
     @Override
     public void put(String key, String value) {
-        // 怎么改变request里的header
-        // 第一个办法，将该方法前置
-        //TODO
-        Request.Builder builder = mRequest.newBuilder(); // 就是将request本身复制了一份，headers变成了新对象
+        Request.Builder builder = mRequest.newBuilder();
         builder.addHeader(key, value);
-        builder.build();
+        if (headers != null) {
+            try {
+                headers.set(mRequest, builder.build().headers());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

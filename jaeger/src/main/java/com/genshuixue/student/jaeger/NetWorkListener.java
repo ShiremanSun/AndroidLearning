@@ -1,5 +1,7 @@
 package com.genshuixue.student.jaeger;
 
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 
 import org.jetbrains.annotations.NotNull;
@@ -64,9 +66,17 @@ public class NetWorkListener extends EventListener {
     private Span mTotalSpan;
     private Tracer mTracer;
     private Map<String, Span> mSpanMap;
+    private Call mCall;
     private NetWorkListener(Call call, Tracer tracer) {
         mTracer = tracer;
+        mCall = call;
         mSpanMap = new HashMap<>();
+        mTotalSpan = mTracer.buildSpan("total").start();
+        //
+        Log.d("spanTime", String.valueOf(System.currentTimeMillis()));
+
+        mTotalSpan.log(call.request().url().toString());
+        mTracer.inject(mTotalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(mCall.request()));
     }
     public static Factory get() {
         Factory factory = new Factory() {
@@ -81,12 +91,13 @@ public class NetWorkListener extends EventListener {
     private static final String TAG = "NetworkEventListener";
 
 
+    /**
+     *
+     * @param call
+     */
     @Override
     public void callStart(@NotNull Call call) {
-        mTotalSpan = mTracer.buildSpan("total").start();
-        mTotalSpan.log(call.request().url().toString());
         super.callStart(call);
-        mTracer.inject(mTotalSpan.context(), Format.Builtin.HTTP_HEADERS, new RequestBuilderCarrier(call.request()));
         buildChildSpan(CALL);
     }
 

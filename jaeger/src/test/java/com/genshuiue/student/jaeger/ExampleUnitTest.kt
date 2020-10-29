@@ -18,7 +18,7 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         JaegerUtil.getTracer()
-        val url = "https://127.0.0.1:9999"
+        val url = "http://127.0.0.1:8888"
         val client = OkHttpClient.Builder()
                 //.addInterceptor(TracerInterceptor(tracer))
                 .eventListenerFactory(NetWorkListener.get())
