@@ -21,7 +21,7 @@ class JaegerTestActivity : AppCompatActivity() {
         JaegerUtil.getTracer()
         test.setOnClickListener {
 
-            val request = Request.Builder().url("http://172.20.116.62:8888")
+            val request = Request.Builder().url("http://172.20.116.11:8888")
             if (client == null) {
                 client = OkHttpClient.Builder()
                         .eventListenerFactory(NetWorkListener.get())

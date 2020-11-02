@@ -173,6 +173,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:text="Douyin"
+                android:id="@+id/douyin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:text="movingItem"
+                android:id="@+id/movingItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </com.sunny.student.view.CustomLinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

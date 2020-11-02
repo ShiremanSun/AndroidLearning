@@ -19,10 +19,12 @@ import com.sunny.student.activity.CircleClockActivity
 import com.sunny.student.activity.FragmentTestActivity
 import com.sunny.student.activity.ThemeActivity
 import com.sunny.student.banner.test.BannerActivity
+import com.sunny.student.douyin.DouYinActivity
 import com.sunny.student.fragment.ItemListDialogFragment
 import com.sunny.student.login.ILoginListener
 import com.sunny.student.login.WechatLogin
 import com.sunny.student.maodian.MaoDianActivity
+import com.sunny.student.moveitem.MoveingItemActivity
 import com.sunny.student.navigation.NavigationRootActivity
 import com.sunny.student.test.TestActivity
 import com.sunny.student.util.CrashHandler
@@ -147,6 +149,15 @@ class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialo
         jaeger.setOnClickListener {
             startActivity(Intent(this, JaegerTestActivity::class.java))
         }
+
+        douyin.setOnClickListener {
+            startActivity(Intent(this, DouYinActivity::class.java))
+        }
+
+        movingItem.setOnClickListener {
+            startActivity(Intent(this, MoveingItemActivity::class.java))
+        }
+
     }
 
     /**

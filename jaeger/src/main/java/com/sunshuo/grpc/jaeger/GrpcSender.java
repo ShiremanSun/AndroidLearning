@@ -1,6 +1,6 @@
 package com.sunshuo.grpc.jaeger;
 
-import com.sunshuo.grpc.jaeger.util.ConvertUtil;
+import com.sunshuo.grpc.jaeger.util.ThriftGrpcSpanConverter;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class GrpcSender extends ThriftSender {
 
     @Override
     public void send(Process process, List<Span> spans) throws SenderException {
-        Collector.PostSpansRequest request = Collector.PostSpansRequest.newBuilder().setBatch(ConvertUtil.convertBatch(spans, process)).build();
+        Collector.PostSpansRequest request = Collector.PostSpansRequest.newBuilder().setBatch(ThriftGrpcSpanConverter.convertBatch(spans, process)).build();
         CollectorClient.getInstance(mChannelBuilder).report(request);
     }
 }

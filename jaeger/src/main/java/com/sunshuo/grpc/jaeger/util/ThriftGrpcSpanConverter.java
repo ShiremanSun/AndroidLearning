@@ -20,7 +20,7 @@ import io.jaegertracing.thriftjava.Tag;
  * on 2020/10/28
  * 把SDK中类型转换成proto中定义的类型
  */
-public class ConvertUtil {
+public class ThriftGrpcSpanConverter {
 
     public static Model.Batch convertBatch(List<Span> spans, Process process) {
         Model.Batch.Builder myBatch = Model.Batch.newBuilder();
@@ -39,7 +39,7 @@ public class ConvertUtil {
             mySpan.setTraceId(convertLongToBS(span.traceIdLow));
             mySpan.addAllLogs(convertLogs(span.logs));
             mySpan.addAllTags(convertTags(span.tags));
-            mySpan.addReferences(convertReferences(span.traceIdLow, span.parentSpanId));
+            mySpan.addAllReferences(convertReferences(span));
             mySpan.setSpanId(convertLongToBS(span.spanId));
             long durationSe = span.duration / 1000000;
             int durationNa = (int) (span.duration % 1000000) * 1000;
@@ -53,26 +53,22 @@ public class ConvertUtil {
         return mySpans;
     }
 
-    private static Model.SpanRef convertReferences(long traceIdLow, long parentSpanId) {
-        Model.SpanRef.Builder spanRef = Model.SpanRef.newBuilder();
-
-        if (parentSpanId != 0 && traceIdLow != 0) {
-            spanRef.setRefType(Model.SpanRefType.CHILD_OF)
-                    .setTraceId(convertLongToBS(traceIdLow)).setSpanId(convertLongToBS(parentSpanId));
-        }
-        return spanRef.build();
-    }
-
     private static ByteString convertLongToBS(long value) {
         ByteBuffer byteBuffer = ByteBuffer.allocate(8);
         byteBuffer.putLong(value);
         return ByteString.copyFrom(byteBuffer.array());
     }
 
-    private static List<Model.SpanRef> convertReferences(List<SpanRef> references) {
+    private static List<Model.SpanRef> convertReferences(Span span) {
         List<Model.SpanRef> myReferences = new ArrayList<>();
-        if (references == null) return myReferences;
-        for (SpanRef ref : references) {
+        if (span.parentSpanId != 0 && span.traceIdLow != 0) {
+            Model.SpanRef.Builder spanRef = Model.SpanRef.newBuilder();
+            spanRef.setRefType(Model.SpanRefType.CHILD_OF)
+                    .setTraceId(convertLongToBS(span.traceIdLow)).setSpanId(convertLongToBS(span.parentSpanId));
+            myReferences.add(spanRef.build());
+        }
+        if (span.references == null || span.references.size() == 0) return myReferences;
+        for (SpanRef ref : span.references) {
             Model.SpanRef.Builder myRef = Model.SpanRef.newBuilder();
             myRef.setSpanId(convertLongToBS(ref.spanId));
             myRef.setTraceId(convertLongToBS(ref.traceIdLow));

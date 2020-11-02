@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sunny.student">
-    <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -16,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".maodian.MaoDianActivity"></activity>
+        <activity android:name=".moveitem.MoveingItemActivity"></activity>
+        <activity android:name=".douyin.DouYinActivity" />
+        <activity android:name=".maodian.MaoDianActivity" />
         <activity android:name=".activity.ThemeActivity" />
         <activity android:name=".webview.WebViewFragment" />
         <activity android:name=".SpanActivity" />
@@ -42,5 +40,9 @@
         </activity>
         <activity android:name=".wxapi.WXEntryActivity" />
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

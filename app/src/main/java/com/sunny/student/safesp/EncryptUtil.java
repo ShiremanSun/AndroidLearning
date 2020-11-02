@@ -36,10 +36,10 @@ class EncryptUtil {
      */
 
     private String SHA() {
-        String key = "bjhl";
+        String key = "sunshuo";
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            messageDigest.update("bjhl".getBytes());
+            messageDigest.update("sunshuo".getBytes());
             byte[] byteBuffer = messageDigest.digest();
             StringBuilder strHexString = new StringBuilder();
             for (byte b : byteBuffer) {
