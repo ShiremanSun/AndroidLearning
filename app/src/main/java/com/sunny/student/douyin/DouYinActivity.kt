@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.gyf.immersionbar.ImmersionBar
 import com.sunny.student.R
 import kotlinx.android.synthetic.main.activity_dou_yin.*
 
@@ -18,6 +19,7 @@ class DouYinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dou_yin)
+        ImmersionBar.with(this).statusBarColor(R.color.black).init()
         // 最外面的左右滑动adapter
         viewPager.adapter = MyPageAdapter()
     }

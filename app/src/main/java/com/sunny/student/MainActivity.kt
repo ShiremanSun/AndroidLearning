@@ -7,17 +7,22 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
+import android.transition.ChangeBounds
+import android.transition.Slide
 import android.util.Log
 import android.view.Choreographer
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.fragment.app.FragmentActivity
 import com.sunshuo.grpc.jaeger.ui.JaegerTestActivity
 import com.sunny.student.activity.CircleClockActivity
 import com.sunny.student.activity.FragmentTestActivity
 import com.sunny.student.activity.ThemeActivity
+import com.sunny.student.animator.AnimatorActivity
 import com.sunny.student.banner.test.BannerActivity
 import com.sunny.student.douyin.DouYinActivity
 import com.sunny.student.fragment.ItemListDialogFragment
@@ -156,6 +161,12 @@ class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialo
 
         movingItem.setOnClickListener {
             startActivity(Intent(this, MoveingItemActivity::class.java))
+        }
+
+        animatorActivity.setOnClickListener {
+            val intent = Intent(this, AnimatorActivity::class.java)
+            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(this, animatorActivity, "button")
+            startActivity(intent, activityOptions.toBundle())
         }
 
     }
