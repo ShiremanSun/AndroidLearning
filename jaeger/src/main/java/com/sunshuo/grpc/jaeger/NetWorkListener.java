@@ -67,7 +67,7 @@ public class NetWorkListener extends EventListener {
         mTracer = tracer;
         mCall = call;
         mSpanMap = new HashMap<>();
-        mTotalSpan = mTracer.buildSpan("total").start();
+        mTotalSpan = GlobalTracer.get().buildSpan("total").start();
         //
         Log.d("spanTime", String.valueOf(System.currentTimeMillis()));
 
