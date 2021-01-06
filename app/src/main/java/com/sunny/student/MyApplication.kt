@@ -8,9 +8,13 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks {
 
 
 
+    companion object{
+        var application : MyApplication? = null
+    }
     private val activities = HashSet<Activity>()
     override fun onCreate() {
         super.onCreate()
+        application = this
         registerActivityLifecycleCallbacks(this)
     }
     override fun onActivityPaused(activity: Activity?) {

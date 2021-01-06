@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.provider.Settings
 import android.text.TextUtils
 import android.transition.ChangeBounds
@@ -14,6 +15,7 @@ import android.view.Choreographer
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
@@ -24,6 +26,7 @@ import com.sunny.student.activity.FragmentTestActivity
 import com.sunny.student.activity.ThemeActivity
 import com.sunny.student.animator.AnimatorActivity
 import com.sunny.student.banner.test.BannerActivity
+import com.sunny.student.dialog.TopDialogFragment
 import com.sunny.student.douyin.DouYinActivity
 import com.sunny.student.fragment.ItemListDialogFragment
 import com.sunny.student.login.ILoginListener
@@ -156,7 +159,11 @@ class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialo
         }
 
         douyin.setOnClickListener {
+            TopDialogFragment().show(supportFragmentManager, "")
             startActivity(Intent(this, DouYinActivity::class.java))
+            Handler().postDelayed({
+
+            }, 1000)
         }
 
         movingItem.setOnClickListener {
