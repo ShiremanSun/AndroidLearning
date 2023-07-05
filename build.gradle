@@ -26,16 +26,7 @@ allprojects {
         google()
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url "https://jitpack.io" }
-        maven {
-            url 'https://maven.byted.org/repository/android_public/'
-        }
-        maven {
-            url 'https://ies-maven.bytedance.net/repository/aweme'
-        }
         google()
-        maven {
-            url 'https://maven.byted.org/repository/caijing_android/'
-        }
         jcenter()
     }
 }

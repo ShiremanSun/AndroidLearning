@@ -9,7 +9,6 @@ import com.google.android.material.appbar.AppBarLayout
 
 /**
  * Created by sunshuo.man on 2022/9/21
- * @author sunshuo.man@bytedance.com
  */
 class TestBehavior: AppBarLayout.ScrollingViewBehavior {
 

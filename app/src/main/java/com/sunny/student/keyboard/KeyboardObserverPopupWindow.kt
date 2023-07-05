@@ -13,7 +13,6 @@ import com.sunny.student.util.KeyBoardUtil
 
 /**
  * Created by sunshuo.man on 2023/7/4
- * @author sunshuo.man@bytedance.com
  */
 class KeyboardObserverPopupWindow constructor(context: Context, editText: EditText, val keyboardObserver: KeyBoardObserver) : Dialog(context, R.style.ttlive_emoji_input_dialog), KeyBoardObserver{
 

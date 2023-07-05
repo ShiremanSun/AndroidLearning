@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat
 
 /**
  * Created by sunshuo.man on 2022/12/22
- * @author sunshuo.man@bytedance.com
  *
  * Observe keyboard
  * the padding in rootView will be ignored

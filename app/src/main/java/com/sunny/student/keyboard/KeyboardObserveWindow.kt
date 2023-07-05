@@ -9,7 +9,6 @@ import androidx.fragment.app.DialogFragment
 
 /**
  * Created by sunshuo.man on 2023/6/29
- * @author sunshuo.man@bytedance.com
  */
 class KeyboardObserveDialog() : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
