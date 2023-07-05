@@ -1,5 +1,6 @@
 package com.sunny.student.fragment
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.livedatabus.LiveDataBus
 import com.sunny.student.R
-import kotlinx.android.synthetic.main.fragment_fragment_one.*
+import kotlinx.android.synthetic.main.fragment_fragment_one.button3
+import kotlinx.android.synthetic.main.fragment_fragment_one.button4
+import kotlinx.android.synthetic.main.fragment_fragment_one.button5
+import kotlinx.android.synthetic.main.fragment_fragment_one.button6
+import kotlinx.android.synthetic.main.fragment_fragment_one.button7
+import kotlinx.android.synthetic.main.fragment_fragment_one.replace
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +26,7 @@ class FragmentOne : Fragment() {
     private var param2: String? = null
 
 
+    private var parent: ViewGroup? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +41,28 @@ class FragmentOne : Fragment() {
         return inflater.inflate(R.layout.fragment_fragment_one, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        parent = view.parent as ViewGroup
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        view?.animate()?.translationX(100F)?.setDuration(60000)?.setListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator?) {
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                (view as? ViewGroup)?.removeAllViews()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationRepeat(animation: Animator?) {
+            }
+
+        })?.start()
 
         replace.setOnClickListener {
             LiveDataBus.getChannel<String>("1").value = "1"
@@ -63,6 +90,16 @@ class FragmentOne : Fragment() {
 
 
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        parent?.removeView(view)
+    }
+
 
     companion object {
         @JvmStatic

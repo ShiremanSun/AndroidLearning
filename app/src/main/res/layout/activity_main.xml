@@ -184,10 +184,39 @@
                 android:id="@+id/movingItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+            <Button
+                android:text="behavior"
+                android:id="@+id/behavior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:text="retrofit"
+                android:id="@+id/retrofit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:text="overlap"
+                android:id="@+id/overlap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:text="fresco"
+                android:id="@+id/fresco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:text="keyboard"
+                android:id="@+id/keyboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <ImageView
                 android:text="animator"
                 android:src="@drawable/test"
+                android:visibility="gone"
                 android:transitionName="button"
                 android:id="@+id/animatorActivity"
                 android:layout_width="wrap_content"

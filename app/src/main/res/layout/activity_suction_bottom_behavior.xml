@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:context=".behavior.SuctionBottomBehavior">
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_scrollFlags="scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                app:title="I am title"
+                app:layout_scrollFlags="scroll"
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
+            app:layout_behavior="com.sunny.student.behavior.TestBehavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="I am bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+

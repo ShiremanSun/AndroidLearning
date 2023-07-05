@@ -1,10 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:windowActivityTransitions">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -52,4 +50,13 @@
         <item name="android:textSize">15sp</item>
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="ttlive_emoji_input_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">#00000000</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
 </resources>

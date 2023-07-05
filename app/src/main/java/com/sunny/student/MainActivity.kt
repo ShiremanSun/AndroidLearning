@@ -8,37 +8,61 @@ import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
 import android.text.TextUtils
-import android.transition.ChangeBounds
-import android.transition.Slide
 import android.util.Log
 import android.view.Choreographer
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
-import androidx.core.util.Pair
 import androidx.fragment.app.FragmentActivity
-import com.sunshuo.grpc.jaeger.ui.JaegerTestActivity
 import com.sunny.student.activity.CircleClockActivity
 import com.sunny.student.activity.FragmentTestActivity
 import com.sunny.student.activity.ThemeActivity
 import com.sunny.student.animator.AnimatorActivity
 import com.sunny.student.banner.test.BannerActivity
+import com.sunny.student.behavior.SuctionBottomBehavior
 import com.sunny.student.dialog.TopDialogFragment
 import com.sunny.student.douyin.DouYinActivity
 import com.sunny.student.fragment.ItemListDialogFragment
+import com.sunny.student.fresco.FrescoActivity
+import com.sunny.student.keyboard.KeyboardActivity
 import com.sunny.student.login.ILoginListener
 import com.sunny.student.login.WechatLogin
 import com.sunny.student.maodian.MaoDianActivity
 import com.sunny.student.moveitem.MoveingItemActivity
 import com.sunny.student.navigation.NavigationRootActivity
+import com.sunny.student.overlapopt.OverLapingActivity
+import com.sunny.student.retrofit.RetrofitTestActivity
 import com.sunny.student.test.TestActivity
 import com.sunny.student.util.CrashHandler
 import com.sunny.student.viewmodel.ViewModelActivity
 import com.sunny.student.webview.WebViewFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.sunshuo.grpc.jaeger.ui.JaegerTestActivity
+import kotlinx.android.synthetic.main.activity_main.EditText
+import kotlinx.android.synthetic.main.activity_main.animatorActivity
+import kotlinx.android.synthetic.main.activity_main.banner
+import kotlinx.android.synthetic.main.activity_main.behavior
+import kotlinx.android.synthetic.main.activity_main.bottomSheet
+import kotlinx.android.synthetic.main.activity_main.button_container
+import kotlinx.android.synthetic.main.activity_main.circleClock
+import kotlinx.android.synthetic.main.activity_main.douyin
+import kotlinx.android.synthetic.main.activity_main.fragmentTest
+import kotlinx.android.synthetic.main.activity_main.fresco
+import kotlinx.android.synthetic.main.activity_main.goAnimator
+import kotlinx.android.synthetic.main.activity_main.jaeger
+import kotlinx.android.synthetic.main.activity_main.keyboard
+import kotlinx.android.synthetic.main.activity_main.maodian
+import kotlinx.android.synthetic.main.activity_main.movingItem
+import kotlinx.android.synthetic.main.activity_main.navigation
+import kotlinx.android.synthetic.main.activity_main.overlap
+import kotlinx.android.synthetic.main.activity_main.retrofit
+import kotlinx.android.synthetic.main.activity_main.switchTheme
+import kotlinx.android.synthetic.main.activity_main.test
+import kotlinx.android.synthetic.main.activity_main.viewModel
+import kotlinx.android.synthetic.main.activity_main.webview
+import kotlinx.android.synthetic.main.activity_main.wechatLogin
+import kotlinx.android.synthetic.main.activity_main.zButton
 
 
 class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialogFragment.Listener{
@@ -168,6 +192,27 @@ class MainActivity : FragmentActivity(), MainActivityContact.View, ItemListDialo
 
         movingItem.setOnClickListener {
             startActivity(Intent(this, MoveingItemActivity::class.java))
+        }
+
+        behavior.setOnClickListener {
+            startActivity(Intent(this, SuctionBottomBehavior::class.java))
+
+        }
+
+        retrofit.setOnClickListener {
+            startActivity(Intent(this, RetrofitTestActivity::class.java))
+        }
+        overlap.setOnClickListener {
+            startActivity(Intent(this, OverLapingActivity::class.java))
+        }
+
+        fresco.setOnClickListener {
+            startActivity(Intent(this, FrescoActivity::class.java))
+        }
+
+        keyboard.setOnClickListener {
+            startActivity(Intent(this, KeyboardActivity::class.java))
+
         }
 
         animatorActivity.setOnClickListener {

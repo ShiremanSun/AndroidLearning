@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.sunny.student">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.sunny.student">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -12,38 +17,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".moveitem.MoveingItemActivity"></activity>
-        <activity android:name=".douyin.DouYinActivity" />
-        <activity android:name=".maodian.MaoDianActivity" />
-        <activity android:name=".activity.ThemeActivity" />
-        <activity android:name=".webview.WebViewFragment" />
-        <activity android:name=".SpanActivity" />
+        <activity
+            android:name=".behavior.SuctionBottomBehavior"
+            android:exported="true"/>
+        <activity android:name=".moveitem.MoveingItemActivity"/>
+        <activity android:name=".douyin.DouYinActivity"/>
+        <activity android:name=".maodian.MaoDianActivity"/>
+        <activity android:name=".activity.ThemeActivity"/>
+        <activity android:name=".webview.WebViewFragment"/>
+        <activity android:name=".SpanActivity"/>
         <activity
             android:name=".EditTextTest"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".banner.test.BannerActivity" />
-        <activity android:name=".test.TestActivity" />
-        <activity android:name=".viewmodel.ViewModelActivity" />
-        <activity android:name=".guide.GuideActivity" />
-        <activity android:name=".databinding.view.DataBindingActivity" />
-        <activity android:name=".navigation.NavigationRootActivity" />
-        <activity android:name=".activity.CircleClockActivity" />
-        <activity android:name=".activity.FragmentTestActivity" />
-        <activity android:name=".animator.AnimatorActivity" />
-        <activity android:name=".flutter.FlutterActivity1" />
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".banner.test.BannerActivity"/>
+        <activity android:name=".test.TestActivity"/>
+        <activity android:name=".viewmodel.ViewModelActivity"/>
+        <activity android:name=".guide.GuideActivity"/>
+        <activity android:name=".databinding.view.DataBindingActivity"/>
+        <activity android:name=".navigation.NavigationRootActivity"/>
+        <activity android:name=".activity.CircleClockActivity"/>
+        <activity android:name=".activity.FragmentTestActivity"/>
+        <activity android:name=".animator.AnimatorActivity"/>
+        <activity android:name=".flutter.FlutterActivity1"/>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".wxapi.WXEntryActivity" />
+        <activity android:name=".wxapi.WXEntryActivity"/>
+        <activity android:name=".overlapopt.OverLapingActivity"/>
+        <activity android:name=".fresco.FrescoActivity"/>
+        <activity android:name=".keyboard.KeyboardActivity"
+            android:exported="false"/>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

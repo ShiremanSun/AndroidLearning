@@ -5,13 +5,13 @@ buildscript {
     ext.nav_version = '1.0.0'
     repositories {
         google()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url "https://jitpack.io" }
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
         classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.8'
 
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
@@ -24,8 +24,18 @@ buildscript {
 allprojects {
     repositories {
         google()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.byted.org/repository/android_public/'
+        }
+        maven {
+            url 'https://ies-maven.bytedance.net/repository/aweme'
+        }
+        google()
+        maven {
+            url 'https://maven.byted.org/repository/caijing_android/'
+        }
         jcenter()
     }
 }

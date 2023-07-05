@@ -1,9 +1,9 @@
 package com.sunny.student.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.livedatabus.LiveDataBus
 import com.sunny.student.R
@@ -38,9 +38,10 @@ class FragmentTestActivity : AppCompatActivity() {
             when (it) {
                 "1" -> {
                     //全局的transaction
-                     val tran =supportFragmentManager.beginTransaction()
+                    //val tran = transaction
+                    val tran =supportFragmentManager.beginTransaction()
                     tran.replace(R.id.container, fragment2, "2")
-                    tran.commit()
+                    tran.commitNow()
                 }
                 "2" -> {
                     //两次 commit相隔时间太短
